@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0161)http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server#setting_up_tomcat_on_eclipse -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head _wxlaelhepjgkhpnfpeodbobgikmbjecnne_="shake_1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12    [Nguyen Ngoc Chan]
+  </title>
+
+  <meta name="generator" content="DokuWiki Release 2009-12-25c &quot;Lemming&quot;">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2013-04-16T11:58:19+0200">
+<meta name="keywords" content="teaching_assistant,web_services,simple_web_service_deployment_with_eclipse_and_tomcat_server,web,serivce,deployment,with,eclipse,and,tomcat">
+<meta name="google-site-verification" content="1GwNyrRPkEzY2yJajxaqKeCT2ofnhmJmVDVjudS__7A">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www-inf.it-sudparis.eu/~nguyen_n/lib/exe/opensearch.php" title="Nguyen Ngoc Chan">
+<link rel="start" href="http://www-inf.it-sudparis.eu/~nguyen_n/">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www-inf.it-sudparis.eu/~nguyen_n/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www-inf.it-sudparis.eu/~nguyen_n/feed.php?mode=list&ns=teaching_assistant:web_services">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www-inf.it-sudparis.eu/~nguyen_n/_export/xhtml/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server">
+<link rel="canonical" href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server">
+<link rel="stylesheet" media="all" type="text/css" href="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/css.php">
+<link rel="stylesheet" media="screen" type="text/css" href="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/css(1).php">
+<link rel="stylesheet" media="print" type="text/css" href="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/css(2).php">
+<script type="text/javascript" charset="utf-8"><!--//--><![CDATA[//><!--
+var NS='teaching_assistant:web_services';var JSINFO = {"id":"teaching_assistant:web_services:simple_web_service_deployment_with_eclipse_and_tomcat_server","namespace":"teaching_assistant:web_services"};
+//--><!]]></script>
+<script type="text/javascript" charset="utf-8" src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/js.php"></script>
+<script type="text/javascript" src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/all.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  
+//--><!]]></script><script src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+var pageTracker = _gat._getTracker("UA-12101355-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+		  
+//--><!]]></script>
+
+  <link rel="shortcut icon" href="http://www-inf.it-sudparis.eu/~nguyen_n/lib/tpl/dokubook/images/favicon.ico">
+
+  
+  <!-- change link borders dynamically -->
+  <style type="text/css">
+            div.dokuwiki ul#top__nav a.edit,
+        div.dokuwiki ul#top__nav a.show,
+        div.dokuwiki ul#top__nav a.source,
+        div.dokuwiki ul#top__nav a.restore
+        {
+      border-color: #fabd23;
+      border-bottom: 1px solid #fff;
+      font-weight: bold;
+    }
+  </style>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style><style type="text/css" id="GINGER_SOFTWARE_style">.GINGER_SOFTWARE_noMark { background : transparent; }  .GINGER_SOFTWARE_wrapper{ position: absolute; overflow: hidden; margin: 0px; padding: 0px; border: 0px solid transparent } .GINGER_SOFTWARE_contour { position : absolute; margin: 0px; }  .GINGER_SOFTWARE_richText { margin : 0px; padding-bottom: 3px; border-width: 0px; border-color: transparent; display: block; color: transparent; -webkit-text-fill-color: transparent; overflow: hidden; white-space: pre-wrap;}  .GINGER_SOFTWARE_inputWrapper .GINGER_SOFTWARE_richText {position: absolute;}  .GINGER_SOFTWARE_canvas { display:none; background-repeat:no-repeat;}  .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {border-top-left-radius:2px; border-top-right-radius:2px; border-bottom-right-radius:2px; border-bottom-left-radius:2px;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {background-image:url(data:image/gif;base64,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)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_synonym {background-image:url(data:image/gif;base64,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)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_noSuggestion {background-image:url(data:image/gif;base64,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)!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_mark {position:relative; background-image:none!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightLeft { position : absolute; left:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightRight { position : absolute; right:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightTop { position : absolute; left:0px; right:0px; top:-2px; height:3px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightBottom { position : absolute; left:0px; right:0px; bottom:-2px; height:3px;}</style></head>
+
+<body screen_capture_injected="true" ginger_software_stylesheet="true" ginger_software_doc="true">
+<div class="dokuwiki">
+  
+  <div id="sidebar_left" class="sidebar">
+    <a href="http://www-inf.it-sudparis.eu/~nguyen_n/" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">  <img class="logo" src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/logo.png" alt="Nguyen Ngoc Chan"></a>
+ 
+    <span class="sb_label">navigation</span>
+<div id="navigation" class="sidebar_box">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/home" class="wikilink1" title="home">Home</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/publications" class="wikilink1" title="publications">Publications</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/activities" class="wikilink1" title="activities">Activities</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant" class="wikilink1" title="teaching_assistant">Teaching Assistant</a></div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/servlet-jsp" class="wikilink1" title="teaching_assistant:servlet-jsp">Servlet &amp; JSP</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services" class="wikilink1" title="teaching_assistant:web_services">Web Services</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/bpel" class="wikilink1" title="teaching_assistant:bpel">BPEL</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/workflow" class="wikilink1" title="teaching_assistant:workflow">Workflow</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/applications" class="wikilink1" title="applications">Applications</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/conferences" class="wikilink1" title="conferences">Conferences</a></div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/conferences/conference_ranking" class="wikilink1" title="conferences:conference_ranking">CS Ranking 2010</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/conferences/journal_ranking" class="wikilink1" title="conferences:journal_ranking">Journals Ranking</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/sharing" class="wikilink1" title="sharing">Sharing</a></div>
+</li>
+</ul>
+<hr>
+
+<p>
+<a href="http://www.it-sudparis.eu/en_accueil.html" class="urlextern" target="_blank" title="http://www.it-sudparis.eu/en_accueil.html" rel="nofollow">TELECOM SudParis</a><br>
+
+<a href="http://inf.telecom-sudparis.eu/" class="urlextern" target="_blank" title="http://inf.telecom-sudparis.eu/" rel="nofollow">INF Department</a><br>
+
+<a href="http://www-inf.int-evry.fr/SIMBAD/" class="urlextern" target="_blank" title="http://www-inf.int-evry.fr/SIMBAD/" rel="nofollow">SIMBAD team</a>
+
+</p>
+<hr>
+
+<p>
+<a href="mailto:ngoc-chan.nguyen@loria.fr" class="mail JSnocheck" title="ngoc-chan.nguyen@loria.fr">Send me an email</a>
+
+</p>
+
+<!-- cachefile /inf/bd/nguyen_n/public_html/data/cache/7/77d0f92718304882aa4f186bee79fce8.xhtml used -->
+</div>
+<span class="sb_label">search</span>
+<div id="search">
+</div>
+<span class="sb_label">toolbox</span>
+<div id="toolbox" class="sidebar_box">
+<a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server?do=login&sectok=44710a61c81e64fa1ed98739f0150011" class="action login" rel="nofollow">Login</a></div>
+  </div>
+
+  <div id="dokubook_container_left">
+
+    <div class="stylehead">
+
+      <div class="header">
+                        <div class="logo">
+          <a href="http://www-inf.it-sudparis.eu/~nguyen_n/" name="dokuwiki__top" accesskey="h" title="[ALT+H]">Nguyen Ngoc Chan</a>        </div>
+      </div>
+
+      <ul id="top__nav">
+              </ul>
+
+    </div>
+
+    
+    <div class="page">
+
+            <div class="breadcrumbs">
+        <span class="bchead">Trace:</span> <span class="bcsep">»</span> <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/jersey_helloworld" class="breadcrumbs" title="teaching_assistant:web_services:jersey_helloworld">RESTful WS using Jersey: "Hello world!"</a> <span class="bcsep">»</span> <span class="curid"><a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server" class="breadcrumbs" title="teaching_assistant:web_services:simple_web_service_deployment_with_eclipse_and_tomcat_server">WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12</a></span>      </div>
+      
+      
+      <!-- wikipage start -->
+      <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header" style="cursor: pointer;"><span id="toc__toggle" class="toc_close" style="cursor: pointer;"><span>−</span></span>Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server#ws_deployment_with_eclipse_v362_and_tomcat_v7012" class="toc">WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan].htm" class="toc">Setting up Tomcat on Eclipse</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server#helloworld_service_deployment" class="toc">HelloWorld service deployment</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server#ws_deployment_on_another_server" class="toc">WS deployment on another server</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server#exercises" class="toc">Exercises</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="ws_deployment_with_eclipse_v362_and_tomcat_v7012" id="ws_deployment_with_eclipse_v362_and_tomcat_v7012">WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12</a></h1>
+<div class="level1">
+
+<p>
+
+This tutorial shows you how to create a web service using Eclipse Helios and deploy it a the Tomcat server. <span style="color: #FF0000">Students of the Telecom Sudparis can download softwares and materials at:</span> <a href="http://www-inf/~nguyen_n/downloads" class="urlextern" target="_blank" title="http://www-inf/~nguyen_n/downloads" rel="nofollow">http://www-inf/~nguyen_n/downloads</a>
+</p>
+
+</div>
+
+<h2><a name="setting_up_tomcat_on_eclipse" id="setting_up_tomcat_on_eclipse">Setting up Tomcat on Eclipse</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Download and extract <a href="http://tomcat.apache.org/download-70.cgi" class="urlextern" target="_blank" title="http://tomcat.apache.org/download-70.cgi" rel="nofollow">Tomcat</a> (suppose version 7.0.12) on your machine.</div>
+</li>
+<li class="level1"><div class="li"> Open the server view on Eclipse by the menu <strong>Windows→Show View→Other→Servers</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Right click on the Server view select <strong>New→Server</strong>. Let the Server's host name is <strong>localhost</strong>, select the Server type is <strong>Apache→Tomcat v7.0 Server</strong>. Click <strong>Next</strong>.<br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat.png" class="mediacenter" alt=""> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> Specify the installation directory, such as C:\Program Files\Apache Software Foundation\Tomcat 7.0. Click <strong>Finish</strong>.<br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat1.png" class="mediacenter" alt=""><br>
+</div>
+</li>
+<li class="level1"><div class="li"> You can test the server by clicking on the <strong>Start</strong> and <strong>Stop</strong> button at the <strong>Server</strong> view. You can also reconfigure the server by selecting <strong>Windows→Preferences→Server→Runtime Environments</strong>.<br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat2.png" class="mediacenter" alt=""><br>
+</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="helloworld_service_deployment" id="helloworld_service_deployment">HelloWorld service deployment</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create a Dynamic Web project named <strong>WS_HelloWorld</strong> by selecting <strong>File→New→Dynamic Web Project</strong>. Keep the Target Runtime is Apache Tomcat v7.0 and click <strong>Finish</strong>.<br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat3.png" class="mediacenter" alt=""><br>
+</div>
+</li>
+<li class="level1"><div class="li"> Open the <strong>WS_HelloWorld</strong> project, right click on the <strong>Java Resources</strong> directory, select <strong>New→Package</strong>. Name it as <strong>tps.ws.deployment</strong>. Click <strong>Finish</strong>. <br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat4.png" class="mediacenter" alt=""><br>
+</div>
+</li>
+<li class="level1"><div class="li"> Create a Java class under the package <strong>tps.ws.deployment</strong> named <strong>HelloWorld</strong>. <br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat5.png" class="mediacenter" alt=""><br>
+</div>
+</li>
+<li class="level1"><div class="li"> In the HelloWorld class, create the function <strong>sayHello</strong> which returns the string <strong>“Hello ”+input</strong>.<br>
+<br>
+<pre class="code java">	<span class="kw1">package</span> <span class="co2">tps.ws.deployment</span><span class="sy0">;</span>
+&nbsp;
+	<span class="kw1">public</span> <span class="kw1">class</span> HelloWorld <span class="br0">{</span>
+		<span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&q=allinurl%3Astring+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> sayHello<span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3Astring+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> input<span class="br0">)</span><span class="br0">{</span>
+			<span class="kw1">return</span> <span class="st0">"Hello "</span><span class="sy0">+</span>input<span class="sy0">;</span>
+		<span class="br0">}</span>	
+	<span class="br0">}</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Right click on the HelloWorld class, select <strong>Web Sevices→Create Web service</strong>. Verify the Configuration and click <strong>Next</strong>. <br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat6.png" class="mediacenter" alt=""> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> Select the function <strong>sayHello</strong> and click <strong>Finish</strong>. <br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat7.png" class="mediacenter" alt=""><br>
+</div>
+</li>
+<li class="level1"><div class="li"> The WS skeleton is automatically generate, the service is automatically published on the Eclipse's Tomcat server, and the Tomcat server automatically run.<br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat8.png" class="mediacenter" alt=""> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> A WSDL file is also generated in the <strong>WebContent→wsdl</strong> folder. We can test our service by right click on this file, select <strong>Web Services→Test with Web Services Explorer</strong>. Select the <strong>sayHello</strong> operation and type something in the input. You will see the result like the following: <br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat9.png" class="mediacenter" alt=""> <br>
+</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="ws_deployment_on_another_server" id="ws_deployment_on_another_server">WS deployment on another server</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Open the <strong>wsdl→HelloWorld.wsdl</strong> file, change the address <strong>localhost:8080</strong> at the location parameter to your another server's address and port, such as: <br>
+<br>
+<pre class="code">    wsdlsoap:address location="http://123.23.13.12:8090/WS_HelloWorld/services/HelloWorld" </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Right click on the <strong>WS_HelloWorld</strong> project, select <strong>Export→War</strong> file. <br>
+<br>
+<img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/ws_eclipse_tomcat10.png" class="mediacenter" alt=""> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> Then, copy this <strong>war</strong> file on <strong>your server's apps</strong> folder.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Restart</strong> your server.</div>
+</li>
+<li class="level1"><div class="li"> The <strong>HelloWorld</strong> service is now available at http://123.23.13.12:8090/WS_HelloWorld/services/HelloWorld. You can open a web browser and check this address.<br>
+</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="exercises" id="exercises">Exercises</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Create a simple calculator service with 4 operators: addition, subtraction, multiplication and division.</div>
+</li>
+<li class="level1"><div class="li"> Create a WS which receives an integer and returns an array of prime numbers less than this integer.</div>
+</li>
+<li class="level1"><div class="li"> Create a sorting service which sorts an inputed arrays of integers or doubles.</div>
+</li>
+<li class="level1"><div class="li"> Suppose that your database stores information about persons. Create a service which receives a person ID and returns the name and age of that person.</div>
+</li>
+<li class="level1"><div class="li"> Create a sorting service which can sorts an input array of person (in the exercise 4) by name or by ID.<br>
+</div>
+</li>
+</ol>
+
+</div>
+
+<!-- cachefile /inf/bd/nguyen_n/public_html/data/cache/4/47e75d41a23007bab04a6aa3c2fe0f97.xhtml used -->
+
+      <!-- wikipage stop -->
+
+      <div class="meta">
+        <div class="doc">
+          teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server.txt · Last modified: 2013/04/16 11:58 by Nguyen Ngoc Chan        </div>
+      </div>
+
+      <a href="http://www-inf.it-sudparis.eu/~nguyen_n/teaching_assistant/web_services/simple_web_service_deployment_with_eclipse_and_tomcat_server#dokuwiki__top" class="action top" accesskey="x">Back to top</a>
+      <div class="clearer"></div>
+
+    </div>
+
+    
+    <div class="clearer"></div>
+
+    
+    <div class="stylefoot">
+          </div>
+
+    <div align="center" class="footerinc">
+  <div class="license"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/cc-by-nc-sa.png" class="medialeft licbutton" alt="CC Attribution-Noncommercial-Share Alike 3.0 Unported"></a> </div>
+  <a target="_blank" href="http://www.chimeric.de/" title="chimeric.de=chi`s home"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/button-chimeric-de.png" width="80" height="15" alt="chimeric.de = chi`s home" border="0"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/button-css.png" width="80" height="15" alt="Valid CSS" border="0"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0"></a>
+
+  <a target="_blank" href="http://www.firefox-browser.de/" title="do yourself a favour and use a real browser - get firefox"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0"></a>
+  
+  <a target="_blank" href="http://www-inf.it-sudparis.eu/~nguyen_n/feed.php" title="Recent changes RSS feed"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0"></a>
+</div>
+
+  </div>
+
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/LEdxGgtB9cN.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/LEdxGgtB9cN(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<div class="no"><img src="./WS deployment with Eclipse v3.6.2 and Tomcat v7.0.12 [Nguyen Ngoc Chan]_files/indexer.php" width="1" height="1" alt=""></div>
+
+
+<iframe width="0" height="0" frameborder="0" src="about:blank" id="GINGER_SOFTWARE_contextMenuIFrame" scrolling="no" style="border: 0px solid; z-index: 2147483647; height: 0px; width: 0px; background-color: transparent;"></iframe><iframe width="0" height="0" frameborder="0" src="about:blank" id="GINGER_SOFTWARE_bubblesIFrame" scrolling="no" style="border: 0px solid; position: absolute; z-index: 2147483647; height: 0px; width: 0px; background-color: transparent;"></iframe><div id="GingerWidgetInfo" style="display:none;">{"version":"0.1.0.382","isExtension":true,"extensionName":"Chrome"}</div></body></html>
